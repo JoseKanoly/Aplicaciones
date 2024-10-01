@@ -1,0 +1,158 @@
+{
+  "id": "9dad8e8e-4819-457a-81a7-37427013ba75",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.Equipo": {
+      "name": "Equipo",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "descripcion": {
+          "name": "descripcion",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "serie": {
+          "name": "serie",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "public.Partido": {
+      "name": "Partido",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "torneoId": {
+          "name": "torneoId",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "equipo1Id": {
+          "name": "equipo1Id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "equipo2Id": {
+          "name": "equipo2Id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "golesEquipo1": {
+          "name": "golesEquipo1",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "golesEquipo2": {
+          "name": "golesEquipo2",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "observacion": {
+          "name": "observacion",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "Partido_torneoId_Torneo_id_fk": {
+          "name": "Partido_torneoId_Torneo_id_fk",
+          "tableFrom": "Partido",
+          "tableTo": "Torneo",
+          "columnsFrom": [
+            "torneoId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Partido_equipo1Id_Equipo_id_fk": {
+          "name": "Partido_equipo1Id_Equipo_id_fk",
+          "tableFrom": "Partido",
+          "tableTo": "Equipo",
+          "columnsFrom": [
+            "equipo1Id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Partido_equipo2Id_Equipo_id_fk": {
+          "name": "Partido_equipo2Id_Equipo_id_fk",
+          "tableFrom": "Partido",
+          "tableTo": "Equipo",
+          "columnsFrom": [
+            "equipo2Id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "public.Torneo": {
+      "name": "Torneo",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "descripcion": {
+          "name": "descripcion",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "sequences": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

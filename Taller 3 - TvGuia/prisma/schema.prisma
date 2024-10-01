@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Canal {
+  id     Int      @id @default(autoincrement())
+  nombre String
+  guias  Guia[]
+}
+
+model Programa {
+  id        Int      @id @default(autoincrement())
+  nombre    String
+  categoria String
+  tipo      String
+  guias     Guia[]
+}
+
+model Guia {
+  id              Int      @id @default(autoincrement())
+  canalId         Int
+  programaId      Int
+  fecha           DateTime
+  horaTransmision DateTime
+  escalaRating    Int
+  canal           Canal    @relation(fields: [canalId], references: [id])
+  programa        Programa @relation(fields: [programaId], references: [id])
+}
