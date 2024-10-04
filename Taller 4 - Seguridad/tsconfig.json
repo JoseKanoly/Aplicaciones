@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./",
+    "paths": {
+      "*": ["node_modules/*", "src/types/*"] //la ruta de tus tipos
+    }
+  },
+  "include": ["src/**/*", "src/types/**/*"], // directorio de tipos
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
