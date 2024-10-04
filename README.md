@@ -1,5 +1,5 @@
-#El repositorio anterior lo tenia desordenado
-las actividades fueron subidas a tiempor
+# El repositorio anterior lo tenia desordenado
+las actividades fueron subidas a tiempo
 
 # Uleam
 
