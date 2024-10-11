@@ -1,15 +1,15 @@
 import request from 'supertest';
-import app from './app'; // Asegúrate de que apunte a tu archivo principal de la aplicación
+import app from './app'; 
 
-// Token JWT que has generado
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywibm9tYnJlIjoiSm9zZSIsImlhdCI6MTcyODA1OTcyMywiZXhwIjoxNzI4MDYwMDIzfQ.J7JroPg3nb_uD_tGGP2lJ2gNzfNROnxYRqQgCcTsZfo';
+
+const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywibm9tYnJlIjoiSm9zZSIsImlhdCI6MTcyODA2MjIwNiwiZXhwIjoxNzI4MDYyNTA2fQ.O8UlH8cDQBchKVnQU75jMp_cH67WG5NR-rvGNwvDsGI';
 
 describe('Pruebas de Canal', () => {
-  // Test de la ruta GET /api/canales
+ 
   it('Debería obtener todos los canales', async () => {
     const res = await request(app)
       .get('/api/canales')
-      .set('Authorization', `Bearer ${token}`); // Añadir token JWT
+      .set('Authorization', `Bearer ${token}`);
     expect(res.statusCode).toEqual(200);
     expect(res.body).toBeInstanceOf(Array);
   });
