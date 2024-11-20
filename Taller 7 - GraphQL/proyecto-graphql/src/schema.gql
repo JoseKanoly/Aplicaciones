@@ -1,0 +1,47 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Canal {
+  id: Int!
+  nombre: String!
+}
+
+type Programa {
+  id: Int!
+  nombre: String!
+  categoria: String!
+  tipo: String!
+}
+
+type Guia {
+  id: Int!
+  canal: Canal!
+  programa: Programa!
+  fecha: DateTime!
+  hora: String!
+  rating: Float!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Query {
+  canales: [Canal!]!
+  programas: [Programa!]!
+  guias: [Guia!]!
+}
+
+type Mutation {
+  createCanal(nombre: String!): Canal!
+  updateCanal(id: Int!, nombre: String!): Canal!
+  deleteCanal(id: Int!): Boolean!
+  createPrograma(nombre: String!, categoria: String!, tipo: String!): Programa!
+  updatePrograma(id: Int!, nombre: String!, categoria: String!, tipo: String!): Programa!
+  deletePrograma(id: Int!): Boolean!
+  createGuia(canalId: Int!, programaId: Int!, fecha: DateTime!, hora: String!, rating: Float): Guia!
+  updateGuia(id: Int!, fecha: DateTime!, hora: String!, rating: Float!): Guia!
+  deleteGuia(id: Int!): Boolean!
+}
