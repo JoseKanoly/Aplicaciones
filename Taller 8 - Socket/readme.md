@@ -1,64 +1,73 @@
-# WebSocket Transaction Tracking System
+# Sistema de Seguimiento de Transacciones WebSocket
 
-## Project Description
-Real-time transaction tracking system using NestJS, WebSocket, Prisma ORM, and Neon PostgreSQL database.
+## Descripción del Proyecto
+Sistema de seguimiento de transacciones en tiempo real utilizando NestJS, WebSocket, Prisma ORM y base de datos Neon PostgreSQL.
 
-## Prerequisites
+## Requisitos Previos
 - Node.js (v18+)
 - npm
-- PostgreSQL client
+- Cliente PostgreSQL
 
-## Installation Steps
+## Pasos de Instalación
 
-### 1. Clone Repository
+### 1. Clonar Repositorio
 ```bash
 git clone https://github.com/JoseKanoly/Aplicaciones.git
 cd "Aplicaciones/Taller 8 - Socket"
 ```
 
-### 2. Install Dependencies
+### 2. Instalar Dependencias
 ```bash
 npm install
 ```
 
-### 3. Database Configuration
-Create `.env` file with provided Neon database URL:
+### 3. Configuración de Base de Datos
+Crear archivo `.env` con URL de base de datos Neon:
 ```
 DATABASE_URL="postgresql://neondb_owner:3Db8BeJsXLcw@ep-noisy-darkness-a5x70lve.us-east-2.aws.neon.tech/prisma_migrate_shadow_db_53b15455-8cfc-471d-ac69-0e3320a75b8f?sslmode=require"
 PORT=3000
 ```
 
-### 4. Database Initialization
+### 4. Inicialización de Base de Datos
 ```bash
 npx prisma migrate dev
 npx prisma generate
 ```
 
-### 5. Start Server
+### 5. Iniciar Servidor
 ```bash
 npm run start
 ```
 
-## WebSocket Endpoints
-- Connection: `ws://localhost:3001`
-- Events:
-  - `agregar-transaccion`: Create transaction
-  - `consultar-activos`: Get active transactions
+## Endpoints WebSocket
+- Conexión: `ws://localhost:3001`
+- Eventos:
+  - `agregar-transaccion`: Crear transacción
+  - `consultar-activos`: Obtener transacciones activas
 
-## Technologies
+## Tecnologías
 - NestJS
 - WebSocket
 - Prisma ORM
 - Neon PostgreSQL
 - TypeScript
 
-## Troubleshooting
-- Verify database connection
-- Check Node.js version
-- Validate environment variables
+## Resolución de Problemas
+- Verificar conexión a base de datos
+- Revisar versión de Node.js
+- Validar variables de entorno
 
-## Project Structure
-- `src/channel/`: Channel management
-- `src/program/`: Program management
-- `src/transactions/`: Transaction handling
-- `src/app.gateway.ts`: WebSocket configuration
+## Estructura del Proyecto
+- `src/channel/`: Gestión de canales
+- `src/program/`: Gestión de programas
+- `src/transactions/`: Manejo de transacciones
+- `src/app.gateway.ts`: Configuración WebSocket
+
+
+## Imagenes
+![Envio](https://github.com/user-attachments/assets/f5fbb5a4-164c-423b-8e23-2ac0211ea4d8)
+![Envio y Entrega](https://github.com/user-attachments/assets/2f523799-9ef3-4716-9e1a-390f60b62161)
+![Entrega](https://github.com/user-attachments/assets/8c27e555-3493-4580-ae1e-f46e10c4a438)
+![Conectados](https://github.com/user-attachments/assets/39785086-6d6d-4bb2-81ef-4730e70fff60)
+![Captura de pantalla (278)](https://github.com/user-attachments/assets/eddfd667-17c4-46bd-be1d-9df6b5f9c54b)
+
